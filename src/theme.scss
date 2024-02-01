@@ -413,16 +413,3 @@ mat-hint {
 .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::before {
   border-bottom-color: var(--swatch2);
 }
-
-.mdc-text-field--filled:not(.mdc-text-field--disabled):hover .mdc-line-ripple::before {
-  border-bottom-color: var(--swatch3);
-}
-
-.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
-  color: var(--swatch3);
-}
-
-.mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__leading {
-  border: 0;
-  width: 0 !important;
-}
