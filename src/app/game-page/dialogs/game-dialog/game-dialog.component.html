@@ -14,8 +14,8 @@
       <mat-label>Γηπεδούχος</mat-label>
       <mat-select formControlName="homeTeam">
         <mat-option *ngFor="let team of teams" [value]="team.value">
-          <img [src]="'assets/flags/'+team.value+'.jpg'">
-          {{ team.name }}
+          <img class="flag" [src]="'assets/flags/'+team.value+'.jpg'">
+          <span>{{ team.name }}</span>
         </mat-option>
       </mat-select>
       <mat-error *ngIf="formService.isFormFieldValid('homeTeam', formGroup)">
@@ -27,7 +27,8 @@
       <mat-label>Φιλοξενούμενος</mat-label>
       <mat-select formControlName="awayTeam">
         <mat-option *ngFor="let team of teams" [value]="team.value">
-          {{ team.name }}
+          <img class="flag" [src]="'assets/flags/'+team.value+'.jpg'">
+          <span>{{ team.name }}</span>
         </mat-option>
       </mat-select>
       <mat-error *ngIf="formService.isFormFieldValid('awayTeam', formGroup)">
