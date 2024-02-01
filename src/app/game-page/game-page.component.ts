@@ -1,3 +1,4 @@
+import * as dayjs from 'dayjs';
 import {Component} from '@angular/core';
 import {CsvService} from './services/csv.service';
 import {GameDialogComponent} from './dialogs/game-dialog/game-dialog.component';
@@ -109,7 +110,7 @@ export class GamePageComponent {
 
   public exportCSV(): void {
     const data = [{
-      'Date': 'sdf',
+      'Date': `"${dayjs().format('DD.MM.YYYY, HH:MM')}"`,
       'Team_1': this.homeTeam.name,
       'Team_2': this.awayTeam.name,
       'T1_Score': this.homeSets,
