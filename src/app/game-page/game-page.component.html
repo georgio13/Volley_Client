@@ -15,10 +15,14 @@
           <span>{{ homeTeam.name }}</span>
           <button class="point-button"
                   color="primary"
-                  [disabled]="disableAddPointButton()"
+                  [disabled]="disableButtons()"
                   mat-flat-button
                   (click)="addHomePoint()">
             Πόντος
+          </button>
+
+          <button class="point-button" [disabled]="disableButtons()" mat-flat-button (click)="callTimeout()">
+            Timeout
           </button>
         </div>
 
@@ -33,10 +37,14 @@
           <span>{{ awayTeam.name }}</span>
           <button class="point-button"
                   color="primary"
-                  [disabled]="disableAddPointButton()"
+                  [disabled]="disableButtons()"
                   mat-flat-button
                   (click)="addAwayPoint()">
             Πόντος
+          </button>
+
+          <button class="point-button" [disabled]="disableButtons()" mat-flat-button (click)="callTimeout()">
+            Timeout
           </button>
         </div>
       </section>
@@ -45,6 +53,10 @@
         <div *ngFor="let set of sets">
           {{ set.homeTeam }} - {{ set.awayTeam }}
         </div>
+      </section>
+
+      <section *ngIf="hasTimeout" class="timeout-section">
+        Απομένουν <span class="time">{{ timeoutLimit - timeoutTime }}</span> για να ξεκινήσει και πάλι το παιχνίδι
       </section>
     </div>
   </div>

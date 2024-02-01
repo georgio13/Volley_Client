@@ -15,10 +15,13 @@ export class GamePageComponent {
   public awayTeam: Team;
   public gameEnded: boolean;
   public hasTimeout: boolean;
+  private intervalID: any;
   public homeSets: number;
   public homeTeam: Team;
   private setLimit: number;
   public sets: Set[];
+  public timeoutLimit: number;
+  public timeoutTime: number;
 
   constructor(private matDialog: MatDialog,
               private snackbarService: SnackbarService,
@@ -30,6 +33,7 @@ export class GamePageComponent {
     this.homeSets = 0;
     this.homeTeam = this.teamService.getTeam('iri');
     this.sets = [];
+    this.timeoutLimit = 60;
     this.addSet();
   }
 
@@ -43,6 +47,8 @@ export class GamePageComponent {
       } else {
         this.addSet();
       }
+    } else if (latestSet.awayTeam === 8 || latestSet.awayTeam === 16) {
+      this.callTimeout();
     }
   }
 
@@ -56,6 +62,8 @@ export class GamePageComponent {
       } else {
         this.addSet();
       }
+    } else if (latestSet.homeTeam === 8 || latestSet.homeTeam === 16) {
+      this.callTimeout();
     }
   }
 
@@ -64,7 +72,19 @@ export class GamePageComponent {
     this.sets.push({awayTeam: 0, homeTeam: 0});
   }
 
-  public disableAddPointButton(): boolean {
+  public callTimeout(): void {
+    this.hasTimeout = true;
+    this.timeoutTime = 0;
+    this.intervalID = setInterval((): void => {
+      this.timeoutTime++;
+      if (this.timeoutTime >= this.timeoutLimit) {
+        this.hasTimeout = false;
+        clearInterval(this.intervalID);
+      }
+    }, 1000);
+  }
+
+  public disableButtons(): boolean {
     return this.hasTimeout || this.gameEnded;
   }
 
