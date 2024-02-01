@@ -15,6 +15,7 @@ export class GamePageComponent {
   public awayTeam: Team;
   public homeSets: number;
   public homeTeam: Team;
+  private setLimit: number;
   public sets: Set[];
 
   constructor(private matDialog: MatDialog,
@@ -24,6 +25,7 @@ export class GamePageComponent {
     this.awayTeam = this.teamService.getTeam('bra');
     this.homeSets = 0;
     this.homeTeam = this.teamService.getTeam('iri');
+    this.setLimit = 25;
     this.sets = [];
     this.sets.push({awayTeam: 0, homeTeam: 0});
   }
@@ -31,11 +33,19 @@ export class GamePageComponent {
   public addAwayPoint(): void {
     let latestSet = this.sets[this.sets.length - 1];
     latestSet.awayTeam += 1;
+    if (latestSet.awayTeam >= this.setLimit && latestSet.awayTeam - latestSet.homeTeam >= 2) {
+      this.awaySets += 1;
+      this.sets.push({awayTeam: 0, homeTeam: 0});
+    }
   }
 
   public addHomePoint(): void {
     let latestSet = this.sets[this.sets.length - 1];
     latestSet.homeTeam += 1;
+    if (latestSet.homeTeam >= this.setLimit && latestSet.homeTeam - latestSet.awayTeam >= 2) {
+      this.homeSets += 1;
+      this.sets.push({awayTeam: 0, homeTeam: 0});
+    }
   }
 
   public openGameDialog(): void {
