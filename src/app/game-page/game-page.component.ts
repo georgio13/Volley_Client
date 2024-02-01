@@ -108,7 +108,16 @@ export class GamePageComponent {
   }
 
   public exportCSV(): void {
-    this.csvService.generateCsv({}, 'Δεδομένα', []);
+    const data = [{
+      'Date': 'sdf',
+      'Team_1': this.homeTeam.name,
+      'Team_2': this.awayTeam.name,
+      'T1_Score': this.homeSets,
+      'T2_Score': this.awaySets,
+      'Winner': this.winnerTeam.value === this.homeTeam.value ? 0 : 1
+    }];
+    const headers = ['Date', 'Team_1', 'Team_2', 'T1_Score', 'T2_Score', 'Winner'];
+    this.csvService.generateCsv(data, 'Δεδομένα', headers);
   }
 
   public openGameDialog(): void {

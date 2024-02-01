@@ -38,9 +38,8 @@ export class CsvService {
   private getBody(): void {
     for (const rowData of this.data) {
       let row = '';
-      for (let y = 0; y < this.headers.length; y++) {
-        const field = this.headers[y].name;
-        row += rowData[field] + CsvService.DEFAULT_FIELD_SEPARATOR;
+      for (const header of this.headers) {
+        row += rowData[header] + CsvService.DEFAULT_FIELD_SEPARATOR;
       }
       row = row.slice(0, -1);
       this.csv += row + CsvService.EOL;
@@ -50,7 +49,7 @@ export class CsvService {
   private getHeaders(): void {
     let row = '';
     for (const header of this.headers) {
-      row += header.title + CsvService.DEFAULT_FIELD_SEPARATOR;
+      row += header + CsvService.DEFAULT_FIELD_SEPARATOR;
     }
     row = row.slice(0, -1);
     this.csv += row + CsvService.EOL;
