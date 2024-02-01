@@ -1,4 +1,4 @@
-import * as dayjs from 'dayjs';
+import dayjs from 'dayjs';
 import {Component} from '@angular/core';
 import {CsvService} from './services/csv.service';
 import {GameDialogComponent} from './dialogs/game-dialog/game-dialog.component';
