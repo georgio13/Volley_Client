@@ -20,17 +20,9 @@
       gap: 6px;
       justify-content: space-between;
 
-      .away-team {
-        align-items: flex-end;
-      }
-
       .divider {
         font-size: 24px;
         font-weight: bolder;
-      }
-
-      .home-team {
-        align-items: flex-start;
       }
 
       .set {
@@ -46,6 +38,7 @@
       }
 
       .team {
+        align-items: center;
         display: flex;
         flex-direction: column;
         gap: 10px;
