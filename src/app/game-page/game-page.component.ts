@@ -11,17 +11,25 @@ import {Team} from './models/team';
   templateUrl: './game-page.component.html'
 })
 export class GamePageComponent {
+  public awaySets: number;
   public awayTeam: Team;
+  public homeSets: number;
   public homeTeam: Team;
   public sets: Set[];
 
   constructor(private matDialog: MatDialog,
               private snackbarService: SnackbarService,
               private teamService: TeamService) {
+    this.awaySets = 0;
     this.awayTeam = this.teamService.getTeam('bra');
+    this.homeSets = 0;
     this.homeTeam = this.teamService.getTeam('iri');
     this.sets = [];
     this.sets.push({awayTeam: 0, homeTeam: 0});
+  }
+
+  public addPoint(): void {
+
   }
 
   public openGameDialog(): void {
