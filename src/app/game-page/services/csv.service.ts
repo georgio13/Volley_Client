@@ -18,12 +18,19 @@ export class CsvService {
   }
 
   public generateCsv(data: any, fileName: string, headers: any[]): void {
+    console.log('enter10')
     this.csv = '';
+    console.log('enter11')
     this.data = data;
+    console.log('enter12')
     this.fileName = fileName;
+    console.log('enter13')
     this.headers = headers;
+    console.log('enter14')
     this.csv += CsvService.BOM;
+    console.log('enter15')
     this.getHeaders();
+    console.log('enter16')
     this.getBody();
     console.log('enter1')
     const blob = new Blob([this.csv], {type: 'text/csv;charset=utf8;'});
