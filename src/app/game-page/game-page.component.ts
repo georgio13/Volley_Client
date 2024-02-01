@@ -32,6 +32,8 @@ export class GamePageComponent {
               private matDialog: MatDialog,
               private snackbarService: SnackbarService,
               private teamService: TeamService) {
+    console.log('enter21')
+    console.log(`"${dayjs().format('DD.MM.YYYY, HH:MM')}"`)
     this.awaySets = 0;
     this.gameEnded = false;
     this.hasTimeout = false;
