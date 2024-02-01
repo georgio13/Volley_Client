@@ -280,66 +280,12 @@ mat-hint {
   --mdc-filled-button-disabled-container-color: var(--swatch8);
 }
 
-.mat-paginator-sticky {
-  bottom: 0;
-  position: sticky;
-  z-index: 10;
-}
-
-.mat-primary .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-full::after {
-  color: var(--swatch1);
-}
-
-.mat-pseudo-checkbox-full {
-  border-color: var(--swatch2) !important;
-}
-
-.mat-pseudo-checkbox-checked.mat-pseudo-checkbox-full {
-  border-color: var(--swatch3) !important;
-}
-
-.mat-sort-header-arrow {
-  color: var(--swatch3);
-}
-
-.mat-sort-header-container {
-  justify-content: center;
-}
-
 .mat-select-search-clear {
   color: var(--swatch2) !important;
 }
 
 .mat-select-search-input {
   background-color: var(--swatch1) !important;
-}
-
-.mat-stepper-horizontal, .mat-stepper-vertical {
-  background-color: var(--swatch11) !important;
-}
-
-.mat-stepper-horizontal-line {
-  border-top-color: var(--swatch8) !important;
-}
-
-.mat-stepper-vertical-line::before {
-  border-left-color: var(--swatch8) !important;
-}
-
-.mat-step-header {
-  color: var(--swatch2) !important;
-}
-
-.mat-step-icon-selected, .mat-step-icon-state-edit {
-  color: var(--swatch1) !important;
-}
-
-.mat-step-text-label {
-  color: var(--swatch2) !important;
-}
-
-.mat-tooltip {
-  font-size: 16px !important;
 }
 
 .mdc-button {
