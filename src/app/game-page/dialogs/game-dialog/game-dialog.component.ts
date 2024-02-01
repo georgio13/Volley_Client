@@ -30,8 +30,7 @@ export class GameDialogComponent {
     return this.formGroup.invalid;
   }
 
-  public async submitBooking(): Promise<any> {
-    let booking = this.formGroup.value;
-    this.matDialogRef.close('success');
+  public async submitGame(): Promise<any> {
+    this.matDialogRef.close(this.formGroup.value);
   }
 }

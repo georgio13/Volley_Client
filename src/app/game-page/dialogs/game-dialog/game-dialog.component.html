@@ -9,6 +9,8 @@
 </div>
 
 <mat-dialog-content>
+  <aside>Δεν μπορείτε να επιλέξετε την ίδια ομάδα ως γηπεδούχο και ως φιλοξενούμενο.</aside>
+
   <form [formGroup]="formGroup">
     <mat-form-field>
       <mat-label>Γηπεδούχος</mat-label>
@@ -41,7 +43,7 @@
 <mat-dialog-actions>
   <button mat-button (click)="closeDialog()">Κλείσιμο</button>
 
-  <button mat-flat-button color="primary" (click)="submitBooking()" [disabled]="isFormInvalid()">
+  <button mat-flat-button color="primary" (click)="submitGame()" [disabled]="isFormInvalid()">
     Καταχώρηση
   </button>
 </mat-dialog-actions>
