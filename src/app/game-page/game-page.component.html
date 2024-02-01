@@ -4,32 +4,46 @@
   </header>
 
   <div class="game-container">
-    <button *ngIf="!homeTeam" mat-flat-button color="primary" (click)="openGameDialog()">Αρχικοποίηση Παιχνιδιού</button>
+    <button *ngIf="!homeTeam" mat-flat-button color="primary" (click)="openGameDialog()">
+      Αρχικοποίηση Παιχνιδιού
+    </button>
 
     <div *ngIf="homeTeam">
       <section class="teams-section">
         <div class="team home-team">
           <img class="flag" [src]="'assets/flags/'+homeTeam.value+'.jpg'">
           <span>{{ homeTeam.name }}</span>
-          <button class="point-button" color="primary" mat-flat-button (click)="addHomePoint()">Πόντος</button>
+          <button class="point-button"
+                  color="primary"
+                  [disabled]="disableAddPointButton()"
+                  mat-flat-button
+                  (click)="addHomePoint()">
+            Πόντος
+          </button>
         </div>
 
-        <div class="set">{{homeSets}}</div>
+        <div class="set">{{ homeSets }}</div>
 
         <div class="divider">:</div>
 
-        <div class="set">{{awaySets}}</div>
+        <div class="set">{{ awaySets }}</div>
 
         <div class="team away-team">
           <img class="flag" [src]="'assets/flags/'+awayTeam.value+'.jpg'">
           <span>{{ awayTeam.name }}</span>
-          <button class="point-button" color="primary" mat-flat-button (click)="addAwayPoint()">Πόντος</button>
+          <button class="point-button"
+                  color="primary"
+                  [disabled]="disableAddPointButton()"
+                  mat-flat-button
+                  (click)="addAwayPoint()">
+            Πόντος
+          </button>
         </div>
       </section>
 
       <section class="sets-section">
         <div *ngFor="let set of sets">
-          {{set.homeTeam}} - {{set.awayTeam}}
+          {{ set.homeTeam }} - {{ set.awayTeam }}
         </div>
       </section>
     </div>

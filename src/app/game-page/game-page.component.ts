@@ -13,6 +13,8 @@ import {Team} from './models/team';
 export class GamePageComponent {
   public awaySets: number;
   public awayTeam: Team;
+  public gameEnded: boolean;
+  public hasTimeout: boolean;
   public homeSets: number;
   public homeTeam: Team;
   private setLimit: number;
@@ -23,11 +25,12 @@ export class GamePageComponent {
               private teamService: TeamService) {
     this.awaySets = 0;
     this.awayTeam = this.teamService.getTeam('bra');
+    this.gameEnded = false;
+    this.hasTimeout = false;
     this.homeSets = 0;
     this.homeTeam = this.teamService.getTeam('iri');
-    this.setLimit = 25;
     this.sets = [];
-    this.sets.push({awayTeam: 0, homeTeam: 0});
+    this.addSet();
   }
 
   public addAwayPoint(): void {
@@ -35,7 +38,11 @@ export class GamePageComponent {
     latestSet.awayTeam += 1;
     if (latestSet.awayTeam >= this.setLimit && latestSet.awayTeam - latestSet.homeTeam >= 2) {
       this.awaySets += 1;
-      this.sets.push({awayTeam: 0, homeTeam: 0});
+      if (this.awaySets === 3) {
+        this.gameEnded = true;
+      } else {
+        this.addSet();
+      }
     }
   }
 
@@ -44,8 +51,21 @@ export class GamePageComponent {
     latestSet.homeTeam += 1;
     if (latestSet.homeTeam >= this.setLimit && latestSet.homeTeam - latestSet.awayTeam >= 2) {
       this.homeSets += 1;
-      this.sets.push({awayTeam: 0, homeTeam: 0});
+      if (this.homeSets === 3) {
+        this.gameEnded = true;
+      } else {
+        this.addSet();
+      }
     }
+  }
+
+  private addSet(): void {
+    this.setLimit = this.homeSets === 2 && this.awaySets === 2 ? 15 : 25;
+    this.sets.push({awayTeam: 0, homeTeam: 0});
+  }
+
+  public disableAddPointButton(): boolean {
+    return this.hasTimeout || this.gameEnded;
   }
 
   public openGameDialog(): void {
