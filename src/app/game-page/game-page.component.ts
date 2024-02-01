@@ -116,7 +116,7 @@ export class GamePageComponent {
     });
   }
 
-  public showServisDot(team: Team): boolean {
+  public showBallDot(team: Team): boolean {
     return team.value === this.ballTeam.value;
   }
 }

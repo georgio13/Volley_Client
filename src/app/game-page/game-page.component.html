@@ -13,7 +13,7 @@
         <div class="team">
           <img class="flag" [src]="'assets/flags/'+homeTeam.value+'.jpg'">
           <div class="name-section">
-            <div *ngIf="showServisDot(homeTeam)" class="servis-dot"></div>
+            <div *ngIf="showBallDot(homeTeam)" class="ball-dot"></div>
             <div>{{ homeTeam.name }}</div>
           </div>
           <button class="point-button"
@@ -38,7 +38,7 @@
         <div class="team">
           <img class="flag" [src]="'assets/flags/'+awayTeam.value+'.jpg'">
           <div class="name-section">
-            <div *ngIf="showServisDot(awayTeam)" class="servis-dot"></div>
+            <div *ngIf="showBallDot(awayTeam)" class="ball-dot"></div>
             <div>{{ awayTeam.name }}</div>
           </div>
           <button class="point-button"
