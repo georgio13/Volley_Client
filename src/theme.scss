@@ -398,14 +398,6 @@ mat-hint {
   color: var(--swatch2);
 }
 
-.mdc-text-field--disabled.mdc-text-field--filled {
-  background-color: transparent;
-}
-
-.mdc-text-field--disabled .mdc-floating-label {
-  color: var(--swatch8);
-}
-
 .mdc-text-field--filled:not(.mdc-text-field--disabled) {
   background: none;
 }
