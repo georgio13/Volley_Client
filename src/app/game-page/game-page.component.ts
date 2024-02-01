@@ -117,6 +117,6 @@ export class GamePageComponent {
   }
 
   public showBallDot(team: Team): boolean {
-    return team.value === this.ballTeam.value;
+    return team.value === this.ballTeam.value && !this.gameEnded;
   }
 }
