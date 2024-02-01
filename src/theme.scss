@@ -56,14 +56,8 @@ $app-typography: mat.define-typography-config(
 @include mat.all-component-typographies($app-typography);
 
 html {
-  --mat-menu-item-label-text-color: var(--swatch2);
-  --mat-paginator-enabled-icon-color: var(--swatch3);
-  --mat-select-disabled-arrow-color: var(--swatch8);
-  --mat-select-disabled-trigger-text-color: var(--swatch8);
   --mat-select-enabled-arrow-color: var(--swatch2);
   --mat-select-enabled-trigger-text-color: var(--swatch2);
-  --mdc-checkbox-disabled-selected-icon-color: var(--swatch3);
-  --mdc-checkbox-disabled-unselected-icon-color: var(--swatch3);
 }
 
 .mat-body, .mat-body-2, .mat-typography .mat-body, .mat-typography .mat-body-2, .mat-typography {
@@ -71,83 +65,8 @@ html {
   letter-spacing: normal;
 }
 
-.mdc-list-item__primary-text {
-  align-items: center;
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.mat-calendar-arrow {
-  fill: var(--swatch2);
-}
-
-.mat-calendar-body-cell-content {
-  color: var(--swatch2);
-}
-
-.mat-calendar-body-disabled > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
-  color: #ffffff4d;
-}
-
-.mat-calendar-body-label {
-  color: var(--swatch10);
-}
-
-.mat-calendar-body-selected {
-  color: var(--swatch1);
-}
-
-.mat-calendar-controls .mat-mdc-icon-button.mat-mdc-button-base {
-  color: var(--swatch10);
-}
-
-.mat-calendar-table-header {
-  color: var(--swatch11);
-}
-
-.mat-calendar-table-header-divider::after {
-  border-bottom: 1px solid var(--swatch11);
-}
-
-.mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
-  border-color: #0fff974d;
-}
-
-.mat-datepicker-actions {
-  color: var(--swatch1) !important;
-  gap: 10px;
-}
-
-.mat-datepicker-content {
-  background-color: var(--swatch7);
-  color: var(--swatch2);
-}
-
-.mat-datepicker-toggle {
-  color: var(--swatch2);
-}
-
-mat-hint {
-  color: var(--swatch2);
-}
-
-.mat-icon {
-  vertical-align: middle;
-}
-
 .mat-mdc-button.mat-unthemed {
   --mdc-text-button-label-text-color: var(--swatch2);
-}
-
-.mat-mdc-checkbox {
-  margin-bottom: 4px;
-  --mdc-checkbox-unselected-hover-icon-color: var(--swatch3) !important;
-  --mdc-checkbox-unselected-icon-color: var(--swatch2) !important;
-}
-
-.mat-mdc-checkbox.mat-mdc-checkbox-disabled label {
-  color: var(--swatch2);
 }
 
 .mat-mdc-dialog-actions {
@@ -170,29 +89,6 @@ mat-hint {
   color: var(--swatch2);
 }
 
-.mat-expansion-panel {
-  background-color: var(--swatch7) !important;
-  box-shadow: none !important;
-  color: var(--swatch2) !important;
-}
-
-.mat-expansion-panel-header {
-  color: var(--swatch2) !important;
-}
-
-.mat-expansion-panel-header-title {
-  color: var(--swatch2) !important;
-}
-
-.mat-expansion-panel-header-description,
-.mat-expansion-indicator::after {
-  color: var(--swatch2) !important;
-}
-
-.mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]):hover {
-  background: var(--swatch7) !important;
-}
-
 .mat-mdc-dialog-title {
   align-items: center;
   display: flex !important;
@@ -200,10 +96,6 @@ mat-hint {
   justify-content: space-between;
   margin: 0 !important;
   padding: 16px 24px !important;
-}
-
-.mat-mdc-form-field {
-  letter-spacing: normal;
 }
 
 .mat-mdc-form-field-bottom-align::before {
@@ -244,8 +136,12 @@ mat-hint {
 }
 
 .mdc-list-item__primary-text {
+  align-items: center;
   color: var(--swatch2);
+  display: flex;
+  gap: 10px;
   letter-spacing: normal !important;
+  margin-bottom: 10px;
 }
 
 .mdc-menu-surface {
