@@ -347,22 +347,6 @@ mat-hint {
   letter-spacing: normal;
 }
 
-.mdc-data-table__cell {
-  color: var(--swatch2);
-  border-bottom-color: var(--swatch2);
-  text-align: center !important;
-}
-
-.mdc-data-table__content {
-  color: var(--swatch2);
-}
-
-.mdc-data-table__header-cell {
-  color: var(--swatch3);
-  border-bottom-color: var(--swatch2);
-  text-align: center !important;
-}
-
 .mdc-dialog .mdc-dialog__content {
   padding: 0 24px !important;
 }
@@ -380,10 +364,6 @@ mat-hint {
   background-color: var(--swatch1) !important;
 }
 
-.mdc-tab {
-  letter-spacing: normal;
-}
-
 .mdc-text-field {
   padding: 0 !important;
 }
@@ -392,10 +372,6 @@ mat-hint {
   color: var(--swatch2);
   letter-spacing: normal;
   font-size: 14px;
-}
-
-.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
-  color: var(--swatch2);
 }
 
 .mdc-text-field--filled:not(.mdc-text-field--disabled) {
