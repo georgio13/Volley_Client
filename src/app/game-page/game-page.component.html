@@ -25,7 +25,11 @@
         </div>
       </section>
 
-      <section></section>
+      <section class="sets-section">
+        <div *ngFor="let set of sets">
+          {{set.homeTeam}} - {{set.awayTeam}}
+        </div>
+      </section>
     </div>
   </div>
 </div>

@@ -10,6 +10,11 @@
     text-align: center;
     width: 100%;
 
+    .sets-section {
+      color: var(--swatch2);
+      font-weight: bold;
+    }
+
     .teams-section {
       display: flex;
       justify-content: space-between;
