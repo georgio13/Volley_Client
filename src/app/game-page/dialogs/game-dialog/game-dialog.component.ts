@@ -27,7 +27,9 @@ export class GameDialogComponent {
   }
 
   public isFormInvalid(): boolean {
-    return this.formGroup.invalid;
+    const awayTeam = this.formGroup.get('awayTeam').value;
+    const homeTeam = this.formGroup.get('homeTeam').value;
+    return this.formGroup.invalid || awayTeam === homeTeam;
   }
 
   public async submitGame(): Promise<any> {
