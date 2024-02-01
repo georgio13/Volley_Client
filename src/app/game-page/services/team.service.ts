@@ -1,8 +1,9 @@
 import {Injectable} from '@angular/core';
+import {Team} from '../models/team';
 
 @Injectable()
 export class TeamService {
-  private readonly teams: any[];
+  private readonly teams: Team[];
 
   constructor() {
     this.teams = [
@@ -73,7 +74,14 @@ export class TeamService {
     ];
   }
 
-  public getTeams(): any[] {
+  public getTeam(value: string): Team {
+    const index = this.teams.findIndex((team) => {
+      return team.value === value;
+    });
+    return this.teams[index];
+  }
+
+  public getTeams(): Team[] {
     return this.teams;
   }
 }

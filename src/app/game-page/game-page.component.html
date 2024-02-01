@@ -4,6 +4,12 @@
   </header>
 
   <div class="game-container">
-    <button mat-flat-button color="primary" (click)="openGameDialog()">Αρχικοποίηση Παιχνιδιού</button>
+    <button *ngIf="!homeTeam" mat-flat-button color="primary" (click)="openGameDialog()">Αρχικοποίηση Παιχνιδιού</button>
+
+    <div *ngIf="homeTeam">
+      <section></section>
+
+      <section></section>
+    </div>
   </div>
 </div>

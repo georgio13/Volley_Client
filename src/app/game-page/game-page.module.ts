@@ -5,6 +5,7 @@ import {GamePageRoutingModule} from './game-page-routing.module';
 import {MaterialModule} from '../material.module';
 import {NgModule} from '@angular/core';
 import {SnackbarService} from './services/snackbar.service';
+import {TeamService} from './services/team.service';
 
 @NgModule({
   declarations: [GamePageComponent],
@@ -14,7 +15,10 @@ import {SnackbarService} from './services/snackbar.service';
     GamePageRoutingModule,
     MaterialModule
   ],
-  providers: [SnackbarService]
+  providers: [
+    SnackbarService,
+    TeamService
+  ]
 })
 export class GamePageModule {
 }

@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {FormService} from '../../services/form.service';
 import {MatDialogRef} from '@angular/material/dialog';
 import {TeamService} from '../../services/team.service';
+import {Team} from '../../models/team';
 
 @Component({
   styleUrls: ['./game-dialog.component.scss'],
@@ -10,7 +11,7 @@ import {TeamService} from '../../services/team.service';
 })
 export class GameDialogComponent {
   public formGroup: FormGroup;
-  public teams: any[];
+  public teams: Team[];
 
   constructor(public formService: FormService,
               private matDialogRef: MatDialogRef<GameDialogComponent>,
