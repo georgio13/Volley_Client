@@ -28,8 +28,14 @@ export class GamePageComponent {
     this.sets.push({awayTeam: 0, homeTeam: 0});
   }
 
-  public addPoint(): void {
+  public addAwayPoint(): void {
+    let latestSet = this.sets[this.sets.length - 1];
+    latestSet.awayTeam += 1;
+  }
 
+  public addHomePoint(): void {
+    let latestSet = this.sets[this.sets.length - 1];
+    latestSet.homeTeam += 1;
   }
 
   public openGameDialog(): void {

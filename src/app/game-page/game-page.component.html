@@ -11,7 +11,7 @@
         <div class="team home-team">
           <img class="flag" [src]="'assets/flags/'+homeTeam.value+'.jpg'">
           <span>{{ homeTeam.name }}</span>
-          <button class="point-button" color="primary" mat-flat-button (click)="addPoint()">Πόντος</button>
+          <button class="point-button" color="primary" mat-flat-button (click)="addHomePoint()">Πόντος</button>
         </div>
 
         <div class="set">{{homeSets}}</div>
@@ -23,7 +23,7 @@
         <div class="team away-team">
           <img class="flag" [src]="'assets/flags/'+awayTeam.value+'.jpg'">
           <span>{{ awayTeam.name }}</span>
-          <button class="point-button" color="primary" mat-flat-button (click)="addPoint()">Πόντος</button>
+          <button class="point-button" color="primary" mat-flat-button (click)="addAwayPoint()">Πόντος</button>
         </div>
       </section>
 
