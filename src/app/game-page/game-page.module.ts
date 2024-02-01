@@ -1,4 +1,5 @@
 import {CommonModule} from '@angular/common';
+import {CsvService} from './services/csv.service';
 import {GameDialogModule} from './dialogs/game-dialog/game-dialog.module';
 import {GamePageComponent} from './game-page.component';
 import {GamePageRoutingModule} from './game-page-routing.module';
@@ -16,6 +17,7 @@ import {TeamService} from './services/team.service';
     MaterialModule
   ],
   providers: [
+    CsvService,
     SnackbarService,
     TeamService
   ]

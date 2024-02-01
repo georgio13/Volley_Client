@@ -69,6 +69,7 @@
         <span>ΝΙΚΗΤΗΣ</span>
         <img class="flag" [src]="'assets/flags/'+winnerTeam.value+'.jpg'">
         <span>{{ winnerTeam.name }}</span>
+        <button color="primary" mat-flat-button (click)="exportCSV()">Εξαγωγή</button>
       </p>
     </div>
   </div>

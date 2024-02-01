@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {CsvService} from './services/csv.service';
 import {GameDialogComponent} from './dialogs/game-dialog/game-dialog.component';
 import {MatDialog} from '@angular/material/dialog';
 import {Set} from './models/set';
@@ -26,7 +27,8 @@ export class GamePageComponent {
   public timeoutTime: number;
   public winnerTeam: Team;
 
-  constructor(private matDialog: MatDialog,
+  constructor(private csvService: CsvService,
+              private matDialog: MatDialog,
               private snackbarService: SnackbarService,
               private teamService: TeamService) {
     this.awaySets = 0;
@@ -103,6 +105,10 @@ export class GamePageComponent {
 
   public disableButtons(): boolean {
     return this.hasTimeout || this.gameEnded;
+  }
+
+  public exportCSV(): void {
+    this.csvService.generateCsv({}, 'Δεδομένα', []);
   }
 
   public openGameDialog(): void {
