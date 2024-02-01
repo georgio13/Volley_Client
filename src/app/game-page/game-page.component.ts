@@ -37,7 +37,7 @@ export class GamePageComponent {
     this.hasTimeout = false;
     this.homeSets = 0;
     this.sets = [];
-    this.timeoutLimit = 60;
+    this.timeoutLimit = 1;
   }
 
   public addAwayPoint(): void {
