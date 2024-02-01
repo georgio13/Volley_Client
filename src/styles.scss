@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --swatch1: #1c2026;
+  --swatch2: #ffffff;
+  --swatch3: #28ffbb;
+  --swatch4: #1c2026c7;
+  --swatch5: #f44336;
+  --swatch6: #ffb826;
+  --swatch7: #2d3136;
+  --swatch8: #757575;
+  --swatch9: #323232;
+  --swatch10: #2d313666;
+  --swatch11: #ffffff00;
+}
+
+body {
+  background: var(--swatch1);
+  font-family: 'Manrope', sans-serif;
+  height: 100vh;
+  margin: 0;
+}
