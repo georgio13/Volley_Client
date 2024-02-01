@@ -242,50 +242,12 @@ mat-hint {
   background: none !important;
 }
 
-.mat-mdc-paginator {
-  color: var(--swatch2) !important;
-}
-
-.mat-mdc-paginator-outer-container {
-  background: var(--swatch1) !important;
-}
-
-.mat-mdc-paginator .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
-  padding: 8px !important;
-}
-
-.mat-mdc-paginator-icon {
-  fill: var(--swatch2);
-}
-
-.mat-mdc-radio-button.mat-accent {
-  --mdc-radio-unselected-hover-icon-color: var(--swatch3);
-  --mdc-radio-unselected-icon-color: var(--swatch2);
-}
-
 .mat-mdc-select-value {
   letter-spacing: normal;
 }
 
-.mat-mdc-tab .mdc-tab__text-label, .mat-mdc-tab-link .mdc-tab__text-label {
-  color: var(--swatch2) !important;
-  letter-spacing: initial;
-}
-
-.mat-mdc-table {
-  background: var(--swatch1);
-}
-
 .mat-mdc-unelevated-button[disabled][disabled] {
   --mdc-filled-button-disabled-container-color: var(--swatch8);
-}
-
-.mat-select-search-clear {
-  color: var(--swatch2) !important;
-}
-
-.mat-select-search-input {
-  background-color: var(--swatch1) !important;
 }
 
 .mdc-button {
