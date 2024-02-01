@@ -30,14 +30,14 @@ export class GamePageComponent {
               private snackbarService: SnackbarService,
               private teamService: TeamService) {
     this.awaySets = 0;
-    this.awayTeam = this.teamService.getTeam('bra');
     this.gameEnded = false;
     this.hasTimeout = false;
     this.homeSets = 0;
-    this.homeTeam = this.teamService.getTeam('iri');
     this.sets = [];
     this.timeoutLimit = 1;
-    this.addSet();
+    // this.awayTeam = this.teamService.getTeam('bra');
+    // this.homeTeam = this.teamService.getTeam('iri');
+    // this.addSet();
   }
 
   public addAwayPoint(): void {
@@ -111,6 +111,7 @@ export class GamePageComponent {
       if (result) {
         this.awayTeam = this.teamService.getTeam(result.awayTeam);
         this.homeTeam = this.teamService.getTeam(result.homeTeam);
+        this.addSet();
         this.snackbarService.showSnackbar('Το παιχνίδι αρχικοποιήθηκε με επιτυχία!');
       }
     });
