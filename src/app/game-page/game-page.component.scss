@@ -18,8 +18,27 @@
         align-items: flex-end;
       }
 
+      .divider {
+        color: var(--swatch2);
+        font-size: 24px;
+        font-weight: bolder;
+      }
+
       .home-team {
         align-items: flex-start;
+      }
+
+      .set {
+        align-items: center;
+        background: var(--swatch3);
+        border-radius: 6px;
+        color: var(--swatch2);
+        display: flex;
+        font-size: 24px;
+        font-weight: bolder;
+        height: 50px;
+        justify-content: center;
+        width: 50px;
       }
 
       .team {
@@ -37,6 +56,6 @@
   }
 
   .logo {
-    width: 250px;
+    width: 200px;
   }
 }

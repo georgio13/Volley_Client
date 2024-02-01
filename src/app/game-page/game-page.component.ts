@@ -15,6 +15,8 @@ export class GamePageComponent {
   constructor(private matDialog: MatDialog,
               private snackbarService: SnackbarService,
               private teamService: TeamService) {
+    this.awayTeam = this.teamService.getTeam('usa');
+    this.homeTeam = this.teamService.getTeam('iri');
   }
 
   public openGameDialog(): void {
