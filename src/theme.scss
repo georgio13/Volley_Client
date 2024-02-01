@@ -226,22 +226,6 @@ mat-hint {
   position: initial !important;
 }
 
-.mat-mdc-icon-button[disabled] .mat-mdc-paginator-icon {
-  fill: var(--swatch8) !important;
-}
-
-.mat-mdc-icon-button[disabled][disabled] {
-  --mdc-icon-button-disabled-icon-color: rgba(255, 255, 255, 0.3019607843);
-}
-
-.mat-mdc-menu-content {
-  background-color: var(--swatch1);
-}
-
-.mat-mdc-menu-panel {
-  background: none !important;
-}
-
 .mat-mdc-select-value {
   letter-spacing: normal;
 }
