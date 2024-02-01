@@ -55,9 +55,15 @@
         </div>
       </section>
 
-      <section *ngIf="hasTimeout" class="timeout-section">
+      <p *ngIf="hasTimeout" class="timeout-section">
         Απομένουν <span class="time">{{ timeoutLimit - timeoutTime }}</span> για να ξεκινήσει και πάλι το παιχνίδι
-      </section>
+      </p>
+
+      <p *ngIf="gameEnded" class="winner">
+        <span>ΝΙΚΗΤΗΣ</span>
+        <img class="flag" [src]="'assets/flags/'+winnerTeam.value+'.jpg'">
+        <span>{{ winnerTeam.name }}</span>
+      </p>
     </div>
   </div>
 </div>

@@ -22,6 +22,7 @@ export class GamePageComponent {
   public sets: Set[];
   public timeoutLimit: number;
   public timeoutTime: number;
+  public winnerTeam: Team;
 
   constructor(private matDialog: MatDialog,
               private snackbarService: SnackbarService,
@@ -33,7 +34,7 @@ export class GamePageComponent {
     this.homeSets = 0;
     this.homeTeam = this.teamService.getTeam('iri');
     this.sets = [];
-    this.timeoutLimit = 60;
+    this.timeoutLimit = 1;
     this.addSet();
   }
 
@@ -44,6 +45,7 @@ export class GamePageComponent {
       this.awaySets += 1;
       if (this.awaySets === 3) {
         this.gameEnded = true;
+        this.winnerTeam = this.awayTeam;
       } else {
         this.addSet();
       }
@@ -59,6 +61,7 @@ export class GamePageComponent {
       this.homeSets += 1;
       if (this.homeSets === 3) {
         this.gameEnded = true;
+        this.winnerTeam = this.homeTeam;
       } else {
         this.addSet();
       }

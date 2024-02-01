@@ -5,18 +5,19 @@
   padding: 20px;
 
   .game-container {
-    margin-top: 40px;
+    margin-top: 20px;
     max-width: 320px;
-    text-align: center;
     width: 100%;
 
     .sets-section {
-      color: var(--swatch2);
       font-weight: bold;
+      text-align: center;
     }
 
     .teams-section {
       display: flex;
+      font-weight: bold;
+      gap: 6px;
       justify-content: space-between;
 
       .away-team {
@@ -24,7 +25,6 @@
       }
 
       .divider {
-        color: var(--swatch2);
         font-size: 24px;
         font-weight: bolder;
       }
@@ -37,7 +37,6 @@
         align-items: center;
         background: var(--swatch3);
         border-radius: 6px;
-        color: var(--swatch2);
         display: flex;
         font-size: 24px;
         font-weight: bolder;
@@ -47,7 +46,6 @@
       }
 
       .team {
-        color: var(--swatch2);
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -64,11 +62,23 @@
     }
 
     .timeout-section {
-      color: var(--swatch2);
       font-weight: bold;
 
       .time {
         font-size: 24px;
+      }
+    }
+
+    .winner {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      font-size: 20px;
+      font-weight: bolder;
+      gap: 10px;
+
+      .flag {
+        border-radius: 6px;
       }
     }
   }
