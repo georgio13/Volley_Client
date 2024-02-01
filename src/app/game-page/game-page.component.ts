@@ -38,6 +38,7 @@ export class GamePageComponent {
     this.homeSets = 0;
     this.sets = [];
     this.timeoutLimit = 1;
+    console.log('enter20')
   }
 
   public addAwayPoint(): void {
@@ -106,6 +107,7 @@ export class GamePageComponent {
   }
 
   public exportCSV(): void {
+    console.log('enter17')
     const data = [{
       'Date': `"${dayjs().format('DD.MM.YYYY, HH:MM')}"`,
       'Team_1': this.homeTeam.name,
@@ -114,7 +116,9 @@ export class GamePageComponent {
       'T2_Score': this.awaySets,
       'Winner': this.winnerTeam.value === this.homeTeam.value ? 0 : 1
     }];
+    console.log('enter18')
     const headers = ['Date', 'Team_1', 'Team_2', 'T1_Score', 'T2_Score', 'Winner'];
+    console.log('enter19')
     this.csvService.generateCsv(data, 'Δεδομένα', headers);
   }
 
