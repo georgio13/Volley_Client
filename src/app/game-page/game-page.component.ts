@@ -37,10 +37,7 @@ export class GamePageComponent {
     this.hasTimeout = false;
     this.homeSets = 0;
     this.sets = [];
-    this.timeoutLimit = 1;
-    // this.awayTeam = this.teamService.getTeam('bra');
-    // this.homeTeam = this.teamService.getTeam('iri');
-    // this.addSet();
+    this.timeoutLimit = 60;
   }
 
   public addAwayPoint(): void {
