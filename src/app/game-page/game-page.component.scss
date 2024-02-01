@@ -6,6 +6,34 @@
 
   .game-container {
     margin-top: 40px;
+    max-width: 320px;
+    text-align: center;
+    width: 100%;
+
+    .teams-section {
+      display: flex;
+      justify-content: space-between;
+
+      .away-team {
+        align-items: flex-end;
+      }
+
+      .home-team {
+        align-items: flex-start;
+      }
+
+      .team {
+        color: var(--swatch2);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .flag {
+          border-radius: 6px;
+          width: 60px;
+        }
+      }
+    }
   }
 
   .logo {

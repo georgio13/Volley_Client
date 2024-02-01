@@ -7,7 +7,17 @@
     <button *ngIf="!homeTeam" mat-flat-button color="primary" (click)="openGameDialog()">Αρχικοποίηση Παιχνιδιού</button>
 
     <div *ngIf="homeTeam">
-      <section></section>
+      <section class="teams-section">
+        <div class="team home-team">
+          <img class="flag" [src]="'assets/flags/'+homeTeam.value+'.jpg'">
+          <span>{{ homeTeam.name }}</span>
+        </div>
+
+        <div class="team away-team">
+          <img class="flag" [src]="'assets/flags/'+awayTeam.value+'.jpg'">
+          <span>{{ awayTeam.name }}</span>
+        </div>
+      </section>
 
       <section></section>
     </div>
