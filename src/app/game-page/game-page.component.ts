@@ -13,11 +13,13 @@ import {Team} from './models/team';
 export class GamePageComponent {
   public awaySets: number;
   public awayTeam: Team;
+  public ballTeam: Team;
   public gameEnded: boolean;
   public hasTimeout: boolean;
   private intervalID: any;
   public homeSets: number;
   public homeTeam: Team;
+  private setBallTeam: Team;
   private setLimit: number;
   public sets: Set[];
   public timeoutLimit: number;
@@ -41,6 +43,7 @@ export class GamePageComponent {
   public addAwayPoint(): void {
     let latestSet = this.sets[this.sets.length - 1];
     latestSet.awayTeam += 1;
+    this.ballTeam = this.awayTeam;
     if (latestSet.awayTeam >= this.setLimit && latestSet.awayTeam - latestSet.homeTeam >= 2) {
       this.awaySets += 1;
       if (this.awaySets === 3) {
@@ -49,7 +52,9 @@ export class GamePageComponent {
       } else {
         this.addSet();
       }
-    } else if (latestSet.awayTeam === 8 || latestSet.awayTeam === 16) {
+    } else if ((latestSet.awayTeam === 8 && latestSet.timeouts === 0) ||
+      (latestSet.awayTeam === 16 && latestSet.timeouts === 1)) {
+      latestSet.timeouts += 1;
       this.callTimeout();
     }
   }
@@ -57,6 +62,7 @@ export class GamePageComponent {
   public addHomePoint(): void {
     let latestSet = this.sets[this.sets.length - 1];
     latestSet.homeTeam += 1;
+    this.ballTeam = this.homeTeam;
     if (latestSet.homeTeam >= this.setLimit && latestSet.homeTeam - latestSet.awayTeam >= 2) {
       this.homeSets += 1;
       if (this.homeSets === 3) {
@@ -65,14 +71,22 @@ export class GamePageComponent {
       } else {
         this.addSet();
       }
-    } else if (latestSet.homeTeam === 8 || latestSet.homeTeam === 16) {
+    } else if ((latestSet.homeTeam === 8 && latestSet.timeouts === 0) ||
+      (latestSet.homeTeam === 16 && latestSet.timeouts === 1)) {
+      latestSet.timeouts += 1;
       this.callTimeout();
     }
   }
 
   private addSet(): void {
+    if (this.sets.length === 0 || this.sets.length === 4) {
+      this.setBallTeam = Math.round(Math.random()) === 0 ? this.homeTeam : this.awayTeam;
+    } else {
+      this.setBallTeam = this.setBallTeam.value === this.homeTeam.value ? this.awayTeam : this.homeTeam;
+    }
+    this.ballTeam = Object.assign({}, this.setBallTeam);
     this.setLimit = this.homeSets === 2 && this.awaySets === 2 ? 15 : 25;
-    this.sets.push({awayTeam: 0, homeTeam: 0});
+    this.sets.push({awayTeam: 0, homeTeam: 0, timeouts: 0});
   }
 
   public callTimeout(): void {
@@ -100,5 +114,9 @@ export class GamePageComponent {
         this.snackbarService.showSnackbar('Το παιχνίδι αρχικοποιήθηκε με επιτυχία!');
       }
     });
+  }
+
+  public showServisDot(team: Team): boolean {
+    return team.value === this.ballTeam.value;
   }
 }

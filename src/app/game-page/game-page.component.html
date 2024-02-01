@@ -12,7 +12,10 @@
       <section class="teams-section">
         <div class="team">
           <img class="flag" [src]="'assets/flags/'+homeTeam.value+'.jpg'">
-          <span>{{ homeTeam.name }}</span>
+          <div class="name-section">
+            <div *ngIf="showServisDot(homeTeam)" class="servis-dot"></div>
+            <div>{{ homeTeam.name }}</div>
+          </div>
           <button class="point-button"
                   color="primary"
                   [disabled]="disableButtons()"
@@ -34,7 +37,10 @@
 
         <div class="team">
           <img class="flag" [src]="'assets/flags/'+awayTeam.value+'.jpg'">
-          <span>{{ awayTeam.name }}</span>
+          <div class="name-section">
+            <div *ngIf="showServisDot(awayTeam)" class="servis-dot"></div>
+            <div>{{ awayTeam.name }}</div>
+          </div>
           <button class="point-button"
                   color="primary"
                   [disabled]="disableButtons()"
