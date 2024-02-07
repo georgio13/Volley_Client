@@ -8,68 +8,68 @@ export class TeamService {
   constructor() {
     this.teams = [
       {
-        name: 'Αργεντινή',
-        value: 'arg'
+        name: 'Jastrzębski Węgiel',
+        value: '1'
       },
       {
-        name: 'Βραζιλία',
-        value: 'bra'
+        name: 'ZAKSA Kędzierzyn-Koźle',
+        value: '10'
       },
       {
-        name: 'Βουλγαρία',
-        value: 'bul'
+        name: 'Asseco Resovia',
+        value: '4'
       },
       {
-        name: 'Καναδάς',
-        value: 'can'
+        name: 'Warta Zawiercie',
+        value: '3'
       },
       {
-        name: 'Κούβα',
-        value: 'cub'
+        name: 'Projekt Warszawa',
+        value: '2'
       },
       {
-        name: 'Γαλλία',
-        value: 'fra'
+        name: 'Trefl Gdańsk',
+        value: '5'
       },
       {
-        name: 'Γερμανία',
-        value: 'ger'
+        name: 'Stal Nysa',
+        value: '7'
       },
       {
-        name: 'Ιράν',
-        value: 'iri'
+        name: 'AZS Olsztyn',
+        value: '8'
       },
       {
-        name: 'Ιταλία',
-        value: 'ita'
+        name: 'Ślepsk Malow Suwałki',
+        value: '12'
       },
       {
-        name: 'Ιαπωνία',
-        value: 'jpn'
+        name: 'LUK  Lublin',
+        value: '6'
       },
       {
-        name: 'Ολλανδία',
-        value: 'ned'
+        name: 'GKS Katowice',
+        value: '14'
       },
       {
-        name: 'Πολωνία',
-        value: 'pol'
+        name: 'PGE Skra Bełchatów',
+        value: '9'
       },
       {
-        name: 'Σερβία',
-        value: 'srb'
+        name: 'Barkom Każany Lwów',
+        value: '11'
       },
       {
-        name: 'Σλοβενία',
-        value: 'slo'
+        name: 'Cuprum Lubin',
+        value: '15'
       },
       {
-        name: 'Τουρκία',
-        value: 'tur'
+        name: 'Czarni Radom',
+        value: '16'
       },
       {
-        name: 'ΗΠΑ',
-        value: 'usa'
+        name: 'BBTS Bielsko-Biała',
+        value: '13'
       }
     ];
   }

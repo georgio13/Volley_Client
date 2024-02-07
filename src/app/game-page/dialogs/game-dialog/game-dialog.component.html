@@ -16,7 +16,7 @@
       <mat-label>Γηπεδούχος</mat-label>
       <mat-select formControlName="homeTeam">
         <mat-option *ngFor="let team of teams" [value]="team.value">
-          <img class="flag" [src]="'assets/flags/'+team.value+'.jpg'">
+          <img class="flag" [src]="'assets/flags/team_'+team.value+'.png'">
           <span>{{ team.name }}</span>
         </mat-option>
       </mat-select>
@@ -29,7 +29,7 @@
       <mat-label>Φιλοξενούμενος</mat-label>
       <mat-select formControlName="awayTeam">
         <mat-option *ngFor="let team of teams" [value]="team.value">
-          <img class="flag" [src]="'assets/flags/'+team.value+'.jpg'">
+          <img class="flag" [src]="'assets/flags/team_'+team.value+'.png'">
           <span>{{ team.name }}</span>
         </mat-option>
       </mat-select>

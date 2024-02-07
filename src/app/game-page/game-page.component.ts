@@ -1,4 +1,3 @@
-import dayjs from 'dayjs';
 import {Component} from '@angular/core';
 import {CsvService} from './services/csv.service';
 import {GameDialogComponent} from './dialogs/game-dialog/game-dialog.component';
@@ -107,15 +106,15 @@ export class GamePageComponent {
 
   public exportCSV(): void {
     const data = [{
-      'Date': `"${dayjs().format('DD.MM.YYYY, HH:MM')}"`,
-      'Team_1': this.homeTeam.name,
-      'Team_2': this.awayTeam.name,
-      'T1_Score': this.homeSets,
-      'T2_Score': this.awaySets,
-      'Winner': this.winnerTeam.value === this.homeTeam.value ? 0 : 1
+      'HomeTeam': this.homeTeam.name.toUpperCase(),
+      'AwayTeam': this.awayTeam.name.toUpperCase(),
+      'HomeSets': this.homeSets,
+      'AwaySets': this.awaySets,
+      'HomePoints': this.sets.reduce((acc: number, set: Set) => acc + set.homeTeam, 0),
+      'AwayPoints': this.sets.reduce((acc: number, set: Set) => acc + set.awayTeam, 0)
     }];
-    const headers = ['Date', 'Team_1', 'Team_2', 'T1_Score', 'T2_Score', 'Winner'];
-    this.csvService.generateCsv(data, 'Δεδομένα', headers);
+    const headers = ['HomeTeam', 'AwayTeam', 'HomeSets', 'AwaySets', 'HomePoints', 'AwayPoints'];
+    this.csvService.generateCsv(data, 'export', headers);
   }
 
   public openGameDialog(): void {

@@ -11,7 +11,7 @@
     <div *ngIf="homeTeam">
       <section class="teams-section">
         <div class="team">
-          <img class="flag" [src]="'assets/flags/'+homeTeam.value+'.jpg'">
+          <img class="flag" [src]="'assets/flags/team_'+homeTeam.value+'.png'">
           <div class="name-section">
             <div *ngIf="showBallDot(homeTeam)" class="ball-dot"></div>
             <div>{{ homeTeam.name }}</div>
@@ -36,7 +36,7 @@
         <div class="set">{{ awaySets }}</div>
 
         <div class="team">
-          <img class="flag" [src]="'assets/flags/'+awayTeam.value+'.jpg'">
+          <img class="flag" [src]="'assets/flags/team_'+awayTeam.value+'.png'">
           <div class="name-section">
             <div *ngIf="showBallDot(awayTeam)" class="ball-dot"></div>
             <div>{{ awayTeam.name }}</div>
@@ -67,7 +67,7 @@
 
       <p *ngIf="gameEnded" class="winner">
         <span>ΝΙΚΗΤΗΣ</span>
-        <img class="flag" [src]="'assets/flags/'+winnerTeam.value+'.jpg'">
+        <img class="flag" [src]="'assets/flags/team_'+winnerTeam.value+'.png'">
         <span>{{ winnerTeam.name }}</span>
         <button color="primary" mat-flat-button (click)="exportCSV()">Εξαγωγή</button>
       </p>
