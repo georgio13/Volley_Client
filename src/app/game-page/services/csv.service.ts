@@ -2,9 +2,8 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class CsvService {
-  private static BOM = '\ufeff';
-  private static DEFAULT_FIELD_SEPARATOR = ';';
-  private static EOL = '\r\n';
+  private static DEFAULT_FIELD_SEPARATOR = ',';
+  private static EOL = '\n';
 
   private csv: string;
   private data: any;
@@ -22,7 +21,6 @@ export class CsvService {
     this.data = data;
     this.fileName = fileName;
     this.headers = headers;
-    this.csv += CsvService.BOM;
     this.getHeaders();
     this.getBody();
     const blob = new Blob([this.csv], {type: 'text/csv;charset=utf8;'});
